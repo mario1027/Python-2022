@@ -2,7 +2,7 @@ import os
 class Config(object):
     basedir = os.path.abspath(os.path.dirname(__file__))
 
-    ASSETS_ROOT=os.getenv("ASSETS_ROOT","/static/css")
+    ASSETS_ROOT=os.getenv("ASSETS_ROOT","/static")
 
 class ProductionConfig(Config):
  

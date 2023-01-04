@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Clase html</title>
-    <link href="style.css" rel="stylesheet">
+    <link href="{{config.ASSETS_ROOT}}/css/style.css" rel="stylesheet">
 </head>
 <body>
 <nav>
     <a href="/"> Main</a>
-    <a href="/page1"> Pag 1</a>
+    <a href="/page1.html"> Pag 1</a>
 </nav>
 <center> <h1 >Titulo</h1> </center>
 <h2> Esta frase esa escrita con h2</h2>
@@ -74,7 +74,7 @@
     </table>
 
 <center>
-    <img src="callofduty.jpg" width="400" height="225"/> 
+    <img src="{{config.ASSETS_ROOT}}/img/callofduty.jpg" width="400" height="225"/> 
 </center>
 <center>
     <iframe width="640" height="480" src="https://www.youtube.com/embed/VfEvH4aML-k" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
@@ -82,7 +82,7 @@
 </center>
 <center>
 <video width="640" height="480" controls>
-    <source src="video.mp4" type="video/mp4">
+    <source src="{{config.ASSETS_ROOT}}/video/video.mp4" type="video/mp4">
 </video>
 </center>
 
