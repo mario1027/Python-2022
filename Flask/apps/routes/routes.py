@@ -11,8 +11,9 @@ def index():
 def route_template(template):
     if not template.endswith(".html"):
         template+".html"
+    variable="Hola mundo"
     segment=get_segment(request)
-    return render_template(template)
+    return render_template(template, variable1=variable)
 
 
 
