@@ -12,7 +12,7 @@ from flask_dance.contrib.github import github
 from apps import db, login_manager
 from apps.authentication import blueprint
 from apps.authentication.forms import LoginForm, CreateAccountForm
-from apps.authentication.models import Users,InfoUser,ImageUser,ImageUsercover
+from apps.authentication.models import Users,InfoUser,ImageUser,ImageUsercover, ejemplo
 
 from apps.authentication.util import verify_pass
 
@@ -258,4 +258,13 @@ def registrarimagencover():
             db.session.add(user)
         db.session.commit()   
     return redirect("/settings.html") 
-    
+
+@blueprint.route('/formularioresp', methods=['GET', 'POST'])
+def formulariorespuesta():
+    nombres       =   request.form["nombres"]
+    apellidos     =   request.form["apellidos"]
+    data=ejemplo(nombres=nombres,apellidos=apellidos)
+    db.session.add(data)
+    db.session.commit()
+    return render_template('home/mensaje.html',msg="Los datos se han guardado con exito")
+

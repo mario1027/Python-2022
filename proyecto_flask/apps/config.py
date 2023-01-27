@@ -10,15 +10,7 @@ class Config(object):
 
     # This will create a file in <app> FOLDER
     # MySQL database
-    SQLALCHEMY_DATABASE_URI = '{}://{}:{}@{}:{}/{}'.format(
-        os.getenv('DB_ENGINE'   , 'mysql'),
-        os.getenv('DB_USERNAME' , 'root'),
-        os.getenv('DB_PASS'     , '10271995'),
-        os.getenv('DB_HOST'     , 'localhost'),
-        os.getenv('DB_PORT'     , 3306),
-        os.getenv('DB_NAME'     , 'db')
-    ) 
-    SQLALCHEMY_TRACK_MODIFICATIONS = False 
+
 #1
     # Assets Management
     ASSETS_ROOT = os.getenv('ASSETS_ROOT', '/static/assets')    
@@ -27,7 +19,15 @@ class Config(object):
 
 class ProductionConfig(Config):
   
-
+# MySQL database
+    SQLALCHEMY_DATABASE_URI = '{}://{}:{}@{}:{}/{}'.format(
+        os.getenv('DB_ENGINE'   , 'mysql'),
+        os.getenv('DB_USERNAME' , 'root'),
+        os.getenv('DB_PASS'     , '10271995'),
+        os.getenv('DB_HOST'     , 'localhost'),
+        os.getenv('DB_PORT'     , 3306),
+        os.getenv('DB_NAME'     , 'db')
+    ) 
     # Security
     SESSION_COOKIE_HTTPONLY = True
     REMEMBER_COOKIE_HTTPONLY = True
@@ -38,6 +38,15 @@ class ProductionConfig(Config):
 
 class DebugConfig(Config):
     DEBUG = True
+    SQLALCHEMY_DATABASE_URI = '{}://{}:{}@{}:{}/{}'.format(
+        os.getenv('DB_ENGINE'   , 'mysql'),
+        os.getenv('DB_USERNAME' , 'root'),
+        os.getenv('DB_PASS'     , '10271995'),
+        os.getenv('DB_HOST'     , 'localhost'),
+        os.getenv('DB_PORT'     , 3306),
+        os.getenv('DB_NAME'     , 'db')
+    ) 
+    SQLALCHEMY_TRACK_MODIFICATIONS = False 
 
 
 # Load all possible configurations

@@ -87,4 +87,7 @@ def render_picture(data):
     return render_pic
 
     
-
+class ejemplo(db.Model):
+    id          =   db.Column(db.Integer, primary_key=True)
+    nombres     =   db.Column(db.String(128))
+    apellidos   =   db.Column(db.String(128))
